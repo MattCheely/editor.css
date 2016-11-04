@@ -1,0 +1,17 @@
+{
+  "name": "codestyle",
+  "version": "1.0.0",
+  "description": "Inspired by: http://musicforprogramming.net/",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-less": "^3.1.0",
+    "stupid-server": "^0.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "matt.cheely@gmail.com"
+}

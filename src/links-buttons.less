@@ -1,0 +1,60 @@
+a {
+    color: @link-color;
+    text-decoration: none;
+}
+
+a:hover,
+a:hover > * {
+    background-color: @link-hover-bg;
+    color: @link-hover-fg;
+}
+
+a.btn,
+a.btn:hover,
+button
+{
+    background: none;
+    border: none;
+    color: @button-default-color;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a.btn.secondary,
+button.secondary {
+    color: @button-secondary-color;
+}
+
+a.btn.tertiary,
+button.tertiary {
+    color: @button-tertiary-color;
+}
+
+a.btn,
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+a.btn::before,
+button::before {
+    content: "[";
+}
+
+a.btn::after,
+button::after {
+    content: "]";
+}
+
+a[disabled],
+a[disabled]:hover,
+button[disabled],
+button[disabled]:hover
+{
+    background: none;
+    color: @comment-color;
+    cursor: default;
+    pointer-events: none;
+}

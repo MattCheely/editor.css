@@ -1,0 +1,36 @@
+@counter-style pad {
+    system: numeric;
+    symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9";
+    pad: 2 "0";
+    suffix: ": "
+}
+
+@counter-style hex-pad {
+    system: numeric;
+    symbols: "0" "1" "2" "3" "4" "5" "6" "7" "8" "9" "a" "b" "c" "d" "e" "f";
+    pad: 2 "0";
+    suffix: ": "
+}
+
+ol {
+    // decimal-leading zero
+    // for browsers that don't support @counter-style
+    list-style-type: decimal-leading-zero;
+    list-style-type: pad;
+}
+
+ol.hex {
+    list-style-type: hex-pad;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul > li::before {
+    content: "- ";
+}
+
+ol, ul {
+    list-style-position: inside;
+}

@@ -1,0 +1,92 @@
+
+.forty-col {
+    width: 40ch;
+}
+
+.sixty-col {
+    width: 60ch;
+}
+
+.eighty-col {
+    width: 80ch;
+}
+
+.hundred-col {
+    width: 100ch;
+}
+
+.onetwenty-col {
+    width: 120ch;
+}
+
+// Use exact sizes for colums with explicitly sized parents.
+
+.onetwenty-col > .cols-2 > * {
+    width: 57ch;
+}
+
+.onetwenty-col > .cols-3 > * {
+    width: 36ch;
+}
+
+.hundred-col > .cols-2 > * {
+    width: 47ch;
+}
+
+.hundred-col > .cols-3 > * {
+    width: 29ch;
+}
+
+.eighty-col > .cols-2 > * {
+    width: 37ch;
+}
+
+.eighty-col > .cols-3 > * {
+    width: 80ch;
+}
+
+.sixty-col > .cols-2 > * {
+    width: 60ch;
+}
+
+.sixty-col > .cols-3 > * {
+    width: 60ch;
+}
+
+.forty-col > .cols-2 > * {
+    width: 40ch;
+}
+
+.forty-col > .cols-3 > * {
+    width: 40ch;
+}
+
+// For arbitrary sizes, well, we'll give it a shot.
+// It might work.
+.cols-2 > * {
+    width: calc(50% - 4ch);
+}
+.cols-3 > * {
+    width: calc(33% - 5ch);
+}
+
+.cols-2 > *,
+.cols-3 > *
+{
+    float: left;
+    margin-right: 6ch;
+    min-width: 29ch;
+}
+
+.cols-2 > *:last-child,
+.cols-3 > *:last-child {
+    margin-right: 0;
+}
+
+.cols-2::after,
+.cols-3::after
+{
+    content:"";
+    display:block;
+    clear:both;
+}
