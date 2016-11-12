@@ -21,8 +21,7 @@ textarea
 {
     background: none;
     border: none;
-    border-bottom: 1px solid @input-color;
-    color: @input-color;
+    border-bottom: 1px solid;
 }
 
 input[type="checkbox"],
@@ -35,7 +34,6 @@ input[type="checkbox"] + span,
 input[type="radio"] + span
 {
     vertical-align: middle;
-    color: @input-color;
     margin-left: -2ch;
     width: 0;
     z-index: -1;
@@ -59,14 +57,9 @@ input[type="radio"]:checked + span::before {
 
 select {
     background: none;
-    color: @input-color;
-    text-align: center;
+    text-align: left;
     -moz-appearance: none;
     -webkit-appearance: none;
-}
-
-option {
-    background: @bg-color;
 }
 
 select.alternate {

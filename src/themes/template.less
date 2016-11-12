@@ -1,0 +1,80 @@
+body {
+    background: @bg-color;
+    color: @text-color;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6
+{
+    color: @comment-color;
+}
+
+input[type="text"],
+input[type="password"],
+textarea
+{
+    border-bottom: 1px solid;
+    color: @input-color;
+}
+
+input[type="checkbox"] + span,
+input[type="radio"] + span
+{
+    color: @input-color;
+}
+
+select {
+    color: @input-color;
+}
+
+option {
+    background: @bg-color;
+}
+
+a {
+    color: @link-color;
+}
+
+a:hover,
+a:hover > * {
+    background-color: @link-color;
+    color: @bg-color;
+}
+
+a.btn,
+a.btn:hover,
+button
+{
+    color: @button-default-color;
+}
+
+a.btn.secondary,
+button.secondary {
+    color: @button-secondary-color;
+}
+
+a.btn.tertiary,
+button.tertiary {
+    color: @button-tertiary-color;
+}
+
+a[disabled],
+a[disabled]:hover,
+button[disabled],
+button[disabled]:hover
+{
+    color: @comment-color;
+}
+
+th {
+    color: @th-color;
+}
+
+.status-line {
+    background: @bg-color;
+    border-top: 1px solid @comment-color;
+}
