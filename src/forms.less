@@ -1,14 +1,19 @@
+// Labels and structure
+
 label::after {
     content: " > ";
 }
 
-.input-group {
-    margin-bottom: 0.38rem;
-}
-
 .input-group > * {
+    margin-top: 0;
     vertical-align: middle;
 }
+
+fieldset > .input-group {
+    padding-left: 1ch;
+}
+
+// Text inputs
 
 .input-group > label+textarea {
     vertical-align: top;
@@ -24,6 +29,8 @@ textarea
     border-bottom: 1px solid;
 }
 
+// Checkboxes and Radio Buttons
+
 input[type="checkbox"],
 input[type="radio"]
 {
@@ -31,6 +38,7 @@ input[type="radio"]
 }
 
 input[type="checkbox"] + span,
+input[type="checkbox"] + label,
 input[type="radio"] + span
 {
     vertical-align: middle;
@@ -39,12 +47,18 @@ input[type="radio"] + span
     z-index: -1;
 }
 
-input[type="checkbox"] + span::before {
-    content: "[ ]";
+input[type="checkbox"] + label::after {
+    content: "";
 }
 
+input[type="checkbox"] + label::before,
+input[type="checkbox"] + span::before {
+    content: "[ ] ";
+}
+
+input[type="checkbox"]:checked + label::before,
 input[type="checkbox"]:checked + span::before {
-    content: "[X]";
+    content: "[X] ";
 }
 
 input[type="radio"] + span::before {
@@ -54,6 +68,8 @@ input[type="radio"] + span::before {
 input[type="radio"]:checked + span::before {
     content: "(*)";
 }
+
+// Select elements
 
 select {
     background: none;
@@ -66,8 +82,4 @@ select.alternate {
     border-left: 1px solid;
     border-right: 1px solid;
     border-radius: 6px;
-}
-
-fieldset > .input-group {
-    padding-left: 1ch;
 }

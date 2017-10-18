@@ -11,11 +11,18 @@
     padding: 0;
 }
 
+* + * {
+    margin-top: 1rem;
+}
+
+html {
+    // Dirty trick to make 1rem == 1line
+    // This lets us use rem to create vertical
+    // spacing between elements that are line-counts.
+    font-size: @font-size * @line-height;
+}
+
 body {
     margin-left: 1ch;
     padding-bottom: @line-height;
-}
-
-p {
-    margin: 0 0 1rem 0;
 }
