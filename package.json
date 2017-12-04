@@ -1,23 +1,18 @@
 {
-  "name": "codestyle",
+  "name": "editor.css",
   "version": "1.0.0",
   "description": "Inspired by: http://musicforprogramming.net/",
   "main": "",
   "dependencies": {},
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-append-prepend": "^1.0.3",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-less": "^3.1.0",
-    "gulp-postcss": "^6.2.0",
-    "gulp-rename": "^1.2.2",
-    "highlight.js": "^9.8.0",
-    "postcss": "^5.2.5",
-    "ramda": "^0.22.1",
-    "stupid-server": "^0.2.0"
+    "brunch": "^2.10.12",
+    "highlight.js": "^9.12.0",
+    "less-brunch": "^2.10.0",
+    "postcss": "^6.0.14",
+    "ramda": "^0.25.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "brunch build --production && ./util/generate-themes"
   },
   "author": "matt.cheely@gmail.com"
 }

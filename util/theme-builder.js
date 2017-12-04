@@ -71,7 +71,7 @@ function buildLessColors(colorMap) {
     R.mapObjIndexed((value, name) => {
         let rule = postcss.atRule({
             name: name + ':',
-            params: value,
+            params: value
         });
         less.append(rule);
     }, colorMap);
@@ -101,5 +101,5 @@ module.exports = postcss.plugin('themeBuilder', function themeBuilder(options) {
 
         css.removeAll();
         css.append(buildLessColors(finalColors));
-    }
+    };
 });

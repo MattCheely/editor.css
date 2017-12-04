@@ -1,0 +1,49 @@
+#! /usr/bin/env node
+
+const themeBuilder = require("./theme-builder");
+const postcss = require("postcss");
+const less = require("less");
+const path = require("path");
+const fs = require("fs");
+
+const cssProcessor = postcss().use(themeBuilder);
+
+// Relevant Paths
+const themeSourcePath = path.dirname(require.resolve("highlight.js/styles/default.css"));
+const templatePath = require.resolve("../app/style/themes/template.less");
+const outputPath = path.join(__dirname, "../public/style/themes");
+
+const themeTemplate = fs.readFileSync(templatePath).toString();
+
+const srcFiles = fs.readdirSync(themeSourcePath);
+
+if (!fs.existsSync(outputPath)) {
+    fs.mkdirSync(outputPath);
+}
+
+srcFiles.forEach((srcPath) => {
+    processFile(path.join(themeSourcePath, srcPath), outputPath);
+});
+
+
+function processFile(sourcePath, outputPath) {
+    let destPath = path.join(outputPath, path.basename(sourcePath));
+    console.log(`Processing ${sourcePath} to ${destPath}`);
+
+    let srcCss = fs.readFileSync(sourcePath).toString();
+    cssProcessor
+        .process(srcCss, { from: sourcePath, to: destPath })
+        .then(result => {
+            return result.css + ";\n" + themeTemplate;
+        })
+        .then(lessCode => {
+            return less.render(lessCode);
+        })
+        .then((result) => {
+            fs.writeFileSync(destPath, result.css);
+        })
+        .catch((err) => {
+            throw err;
+        });
+}
+
