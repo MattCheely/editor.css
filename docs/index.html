@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./editor.css"></link>
+    </head>
+    <body class="hundred-col with-status-line">
+        <main class="container">
+            ${require('./_intro.html')}
+
+            ${require('./_themes.html')}
+
+            ${require('./_headings.html')}
+            ${require('./_inline-text.html')}
+            ${require('./_blockquotes.html')}
+            ${require('./_links.html')}
+
+            ${require('./_buttons.html')}
+            ${require('./_forms.html')}
+        </main>
+    <script type="text/javascript">
+     ${require('./_script.js')}
+    </script>
+    </body>
+</html>

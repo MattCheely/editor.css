@@ -1,0 +1,73 @@
+label::after {
+  content: " > ";
+}
+
+.input-group {
+  margin-bottom: 0.38rem;
+}
+
+.input-group > * {
+  vertical-align: middle;
+}
+
+.input-group > label + textarea {
+  vertical-align: top;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="submit"]):not([type="button"]),
+textarea {
+  background: none;
+  border: none;
+  border-bottom: 1px solid;
+  border-color: var(--input-color);
+}
+
+input::before {
+  content: ">";
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  opacity: 0;
+}
+
+input[type="checkbox"] + span,
+input[type="radio"] + span {
+  vertical-align: middle;
+  margin-left: -2ch;
+  width: 0;
+  z-index: -1;
+}
+
+input[type="checkbox"] + span::before {
+  content: "[ ]";
+}
+
+input[type="checkbox"]:checked + span::before {
+  content: "[X]";
+}
+
+input[type="radio"] + span::before {
+  content: "( )";
+}
+
+input[type="radio"]:checked + span::before {
+  content: "(*)";
+}
+
+select {
+  background: none;
+  text-align: left;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+select.alternate {
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-radius: 6px;
+}
+
+fieldset > .input-group {
+  padding-left: 1ch;
+}

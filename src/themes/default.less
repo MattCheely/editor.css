@@ -1,13 +1,89 @@
-@bg-color: #00303e;
-@text-color: #f8f8f2;
-@comment-color: #999;
-@link-color: #ec007c;
-@link-hover-bg: #0096c1;
-@link-hover-fg: #00303e;
-@button-default-color: #ae81ff;
-@button-secondary-color: #66d9ef;
-@button-tertiary-color: #fd971f;
-@input-color: #efe158;
-@th-color: #66d9ef;
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  @import (reference) "light-colors.less";
+  color-scheme: light;
+  .color-mapping();
+}
 
-@import "template";
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    @import (reference, multiple) "dark-colors.less";
+    color-scheme: dark;
+    .color-mapping();
+  }
+}
+
+[data-theme="dark"] {
+  @import (reference, multiple) "dark-colors.less";
+  color-scheme: dark;
+  .color-mapping();
+}
+
+:root {
+  @line-height: 1.5;
+
+  --font-family: "Fira Code", monospace;
+  --font-size: 16px;
+  --line-height: @line-height;
+  --font-weight: 400;
+  .spacing();
+
+  --border-radius: 0.25rem;
+  .heading-decorators();
+  .card-decorators();
+}
+
+.spacing() {
+  @line-spacing: 1.5;
+  @related-item-spacing: unit(1 * @line-spacing, rem);
+  @unrelated-item-spacing: unit(2 * @line-spacing, rem);
+  --typography-spacing-vertical: @related-item-spacing;
+  --block-spacing-vertical: @related-item-spacing;
+  --block-spacing-horizontal: 2ch;
+  --section-spacing-vertical: @unrelated-item-spacing;
+  --grid-spacing-horizontal: 2ch;
+  --grid-row-gap: @related-item-spacing;
+}
+
+// Mapping from code highlight colors to pico.css compatibale CSS properties
+.color-mapping() {
+  --background-color: @bg-color;
+  --color: @text-color;
+  --h1-color: @comment-color;
+  --h2-color: @comment-color;
+  --h3-color: @comment-color;
+  --h4-color: @comment-color;
+  --h5-color: @comment-color;
+  --h6-color: @comment-color;
+  --del-color: @error-color;
+  --ins-color: @success-color;
+  --mark-background-color: @input-color;
+  --mark-color: @bg-color;
+  --primary-action-color: @button-default-color;
+  --secondary-action-color: @button-tertiary-color;
+  --contrast-action-color: @button-secondary-color;
+  --disabled-color: @comment-color;
+  --input-color: @input-color;
+}
+
+.heading-decorators() {
+  --h1-before: "// === ";
+  --h1-after: " ===";
+  --h2-before: "// == ";
+  --h2-after: " ==";
+  --h3-before: "// -- ";
+  --h3-after: " --";
+  --h4-before: "// - ";
+  --h4-after: " -";
+  --h5-before: "// ";
+  --h5-after: "";
+  --h6-before: "// ";
+  --h6-after: "";
+  --hgroup-subhead-before: "// ";
+  --hgroup-subhead-after: "";
+}
+
+.card-decorators() {
+  --card-border-width: 1px;
+  --card-border-color: var(--color);
+}

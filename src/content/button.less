@@ -1,0 +1,62 @@
+a[role="button"],
+a[role="button"]:hover,
+input[type="submit"],
+button {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  background: none;
+  border: none;
+  color: var(--primary-action-color);
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+button {
+  display: block;
+  width: 100%;
+  margin-bottom: var(--block-spacing-vertical);
+}
+
+a.secondary[role="button"],
+a.secondary[role="button"]:hover,
+input.secondary[type="submit"],
+button.secondary {
+  color: var(--secondary-action-color);
+}
+
+a.contrast[role="button"],
+a.contrast[role="button"]:hover,
+input.contrast[type="submit"],
+button.contrast {
+  color: var(--contrast-action-color);
+}
+
+a[role="button"],
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+a[role="button"]::before,
+input[type="submit"]::before,
+button::before {
+  content: "[";
+}
+
+a[role="button"]::after,
+input[type="submit"]::after,
+button::after {
+  content: "]";
+}
+
+a[disabled],
+a[disabled]:hover,
+button[disabled],
+button[disabled]:hover {
+  background: none;
+  color: var(--disabled-color);
+  cursor: default;
+  pointer-events: none;
+}

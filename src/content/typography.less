@@ -1,0 +1,238 @@
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: var(--typography-spacing-vertical);
+  color: var(--color);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+h1 {
+  color: var(--h1-color);
+}
+h2 {
+  color: var(--h2-color);
+}
+h3 {
+  color: var(--h3-color);
+}
+h4 {
+  color: var(--h4-color);
+}
+h5 {
+  color: var(--h5-color);
+}
+h6 {
+  color: var(--h6-color);
+}
+
+h1::before,
+h2::before,
+h3::before,
+h5::before,
+h6::before,
+h1::after,
+h2::after,
+h3::after,
+h5::after,
+h6::after {
+  white-space: pre;
+}
+
+h1::before {
+  content: var(--h1-before);
+}
+
+h1::after {
+  content: var(--h1-after);
+}
+
+h2::before {
+  content: var(--h2-before);
+}
+
+h2::after {
+  content: var(--h2-after);
+}
+
+h3::before {
+  content: var(--h3-before);
+}
+
+h3::after {
+  content: var(--h3-after);
+}
+
+h4::before {
+  content: var(--h4-before);
+}
+
+h4::after {
+  content: var(--h4-after);
+}
+
+h5::before {
+  content: var(--h5-before);
+}
+
+h5::after {
+  content: var(--h5-after);
+}
+
+h6::before {
+  content: var(--h6-before);
+}
+
+h6::after {
+  content: var(--h6-after);
+}
+
+hgroup {
+  margin-bottom: var(--typography-spacing-vertical);
+  > * {
+    margin-bottom: 0;
+  }
+  > *:last-child::before {
+    content: var(--hgroup-subhead-before);
+  }
+  > *:last-child::after {
+    content: var(--hgroup-subhead-after);
+  }
+}
+
+// Margin-top for headings after a typography block
+address,
+blockquote,
+dl,
+figure,
+form,
+ol,
+p,
+pre,
+table,
+ul {
+  & ~ h1,
+  & ~ h1,
+  & ~ h2,
+  & ~ h3,
+  & ~ h4,
+  & ~ h5,
+  & ~ h6,
+  & ~ hgroup {
+    margin-top: calc(2 * var(--typography-spacing-vertical));
+  }
+}
+
+// Text styles
+
+// Abbreviations
+abbr[title] {
+  text-decoration: dotted underline; // Browser reset
+  cursor: help;
+}
+
+// Bold
+b,
+strong {
+  font-weight: 700;
+}
+
+// Deleted
+del {
+  color: var(--del-color);
+}
+
+// Inserted
+ins {
+  text-decoration: wavy underline var(--ins-color);
+}
+
+// Keyboard
+kbd {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color);
+  padding: 0 1ch;
+}
+
+// Highlight
+mark {
+  background-color: var(--mark-background-color);
+  color: var(--mark-color);
+  font-weight: bold;
+}
+
+// Small
+small {
+  font-size: 0.5rem;
+}
+
+// Superscript & Subscrpt
+sub,
+sup {
+  font-size: 1rem;
+  position: relative;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  bottom: 0.4rem;
+}
+
+sub {
+  top: 0.4rem;
+}
+
+// Links
+
+a {
+  color: var(--primary-action-color);
+  text-decoration: none;
+}
+
+a:hover,
+a:hover > * {
+  background-color: var(--primary-action-color);
+  color: var(--background-color);
+}
+
+a.secondary {
+  color: var(--secondary-action-color);
+}
+
+a.secondary:hover,
+a.secondary:hover > * {
+  background-color: var(--secondary-action-color);
+  color: var(--background-color);
+}
+
+a.contrast {
+  color: var(--contrast-action-color);
+}
+
+a.contrast:hover,
+a.contrast:hover > * {
+  background-color: var(--contrast-action-color);
+  color: var(--background-color);
+}
+
+// Blockquote
+blockquote {
+  margin: var(--typography-spacing-vertical) 0;
+  border-left: 1px solid var(--color);
+  padding-left: calc(var(--block-spacing-horizontal) - 1px);
+  padding-right: var(--block-spacing-horizontal);
+  padding-top: var(--block-spacing-vertical);
+  padding-bottom: var(--block-spacing-vertical);
+  footer {
+    margin-top: var(--typography-spacing-vertical);
+  }
+}

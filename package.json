@@ -1,23 +1,21 @@
 {
-  "name": "codestyle",
+  "name": "editor.css",
   "version": "1.0.0",
   "description": "Inspired by: http://musicforprogramming.net/",
-  "main": "",
-  "dependencies": {},
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-append-prepend": "^1.0.3",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-less": "^3.1.0",
-    "gulp-postcss": "^6.2.0",
-    "gulp-rename": "^1.2.2",
-    "highlight.js": "^9.8.0",
-    "postcss": "^5.2.5",
-    "ramda": "^0.22.1",
-    "stupid-server": "^0.2.0"
-  },
+  "author": "matt.cheely@gmail.com",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build.css": "lessc src/editor.less dist/editor.css",
+    "build.docs": "html-includes --src docs --dest dist",
+    "watch.docs": "html-includes --watch --src docs --dest dist",
+    "watch.css": "less-watch-compiler src dist editor.less",
+    "build": "npm run build.css && npm run build.docs",
+    "start": "concurrently \"npm run watch.css\" \"npm run watch.docs\" \"stupid-server dist\""
   },
-  "author": "matt.cheely@gmail.com"
+  "devDependencies": {
+    "concurrently": "^6.5.1",
+    "html-includes": "^4.4.1",
+    "less": "^4.1.2",
+    "less-watch-compiler": "^1.16.3",
+    "stupid-server": "^0.2.0"
+  }
 }
