@@ -1,3 +1,3 @@
 Inspired by: http://musicforprogramming.net/
 
-Demo at: https://mattcheely.github.io/editor.css/
+Demo at: https://matt.chee.ly/editor.css/
