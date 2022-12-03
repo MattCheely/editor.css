@@ -9,7 +9,7 @@
     "watch.docs": "html-includes --watch --src docs --dest dist",
     "watch.css": "less-watch-compiler src dist editor.less",
     "build": "npm run build.css && npm run build.docs",
-    "start": "concurrently \"npm run watch.css\" \"npm run watch.docs\" \"stupid-server dist\""
+    "start": "concurrently \"npm run watch.css\" \"npm run watch.docs\" \"stupid-server dist/\""
   },
   "devDependencies": {
     "concurrently": "^6.5.1",

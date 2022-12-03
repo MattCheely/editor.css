@@ -1,5 +1,21 @@
 .container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 100ch;
+  max-width: 50ch;
+
+  @media (min-width: @sz-sm) {
+    max-width: 55ch;  
+  }
+
+  @media (min-width: @sz-md) {
+    max-width: 70ch;
+  }
+
+  @media (min-width: @sz-lg) {
+    max-width: 80ch;
+  }
+
+  @media (min-width: @sz-lg) {
+    max-width: 90ch;
+  }
 }
